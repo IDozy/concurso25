@@ -1,0 +1,140 @@
+/* Ajuste para que el navbar esté fijo en la parte superior */
+.PublicHeader {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 5rem; /* Ajusta esta altura según tus necesidades */
+  /* background-color: #E4E4E6;  */
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5rem; /* Ajusta el padding horizontal */
+  box-sizing: border-box;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.2); /* Border inferior leve */
+
+
+  /* background: #354e48; */
+  background: linear-gradient(135deg, #e4e4e6 0%, #148766 14%);
+}
+
+.hidden {
+  top: -100px; /* Ajusta para ocultar el navbar al desplazarse hacia abajo */
+  transition: top 0.3s;
+}
+
+.PublicHeader_logo {
+  display: flex;
+  align-items: center;
+  height: 100%; /* Para alinear el logo verticalmente */
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.menuItems {
+  display: flex;
+  list-style: none;
+  margin: 0; /* Eliminar márgenes para asegurar una altura mínima */
+  padding: 0; /* Eliminar padding para asegurar una altura mínima */
+}
+
+.menuItems li {
+  margin-right: 1rem; /* Reduce el margen entre los elementos del menú */
+}
+
+.menuItems li a {
+  color: #f5f3f0; /* Color letras */
+  text-decoration: none;
+  transition: color 0.2s;
+  padding: 0.5rem 0; /* Reduce el padding vertical de los enlaces del menú */
+  line-height: 1; /* Asegurar que no haya espacio extra por la altura de la línea */
+}
+
+.menuItems li a:hover {
+  color: var(--azul-memoryx);
+}
+
+/* Estilos para el menú móvil */
+.hamburger,
+.toggle {
+  display: none;
+}
+
+.hamburger div,
+.toggle div {
+  width: 30px;
+  height: 3px;
+  background: #fff;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+@media (max-width: 900px) {
+  .hamburger,
+  .toggle {
+    display: block;
+    cursor: pointer;
+  }
+
+  .navBar {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(20,135,102,1) 0%, rgba(16,108,80,1) 35%);
+    position: absolute;
+    top: 80px; /* Asegurar que el menú móvil aparezca justo debajo del navbar */
+    left: 0;
+    z-index: 999;
+    transition: height 0.3s ease-in-out;
+    overflow: hidden;
+  }
+
+  .navBar.active {
+    display: flex;
+    height: auto;
+  }
+
+  .menuItems {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .menuItems li {
+    margin: 1rem 0;
+  }
+
+  .hamburger.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .hamburger.toggle .line2 {
+    opacity: 0;
+  }
+
+  .hamburger.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+    -webkit-transform: rotate(45deg) translate(-5px, -6px);
+    -moz-transform: rotate(45deg) translate(-5px, -6px);
+    -ms-transform: rotate(45deg) translate(-5px, -6px);
+    -o-transform: rotate(45deg) translate(-5px, -6px);
+}
+}
+
+@media (min-width: 901px) {
+  .PublicHeader {
+    height: 5rem; /* Ajusta esta altura según tus necesidades */
+    padding: 0 5rem; /* Ajusta el padding horizontal */
+  }
+}
+.logoImage{
+  height: 50px; /* Ajusta la altura del logo */
+  width: auto; /* Mantiene la proporción */
+  display: block; /* Para que se comporte como un bloque */
+  margin-right: 20px; /* Espacio a la derecha del logo */
+}
